@@ -151,7 +151,7 @@ vec4 flixel_texture2D(sampler2D bitmap, vec2 coord, float bias) {
 
 	// misc
 	ignoreShaderHeaderEnd = /^.*\/\/\s*end\s+of\s+ShadertoyToFlixel\s+header\b\s*$/m.test(file)
-	ignoreMain = /\bvoid\s+main\s*\(\s*\)\s*{\s*mainImage\(\s*gl_FragColor\s*,\s*openfl_TextureCoordv\s*\*\s*openfl_TextureSize\s*\)\s*;\s*}/.test(file)
+	ignoreMain = /void\s+main\s*\(\s*\)\s*{/.test(file) || /\bvoid\s+main\s*\(\s*\)\s*{\s*mainImage\(\s*gl_FragColor\s*,\s*openfl_TextureCoordv\s*\*\s*openfl_TextureSize\s*\)\s*;\s*}/.test(file)
 
 	var shaderHeader = ""
 
